@@ -1,0 +1,10 @@
+services:
+  ext4mount:
+    image: ubuntu:latest
+    container_name: ext4mount
+    privileged: true
+    volumes:
+      - /file.raw:/file.raw
+      - ./mnt:/mnt
+      - ./mount-raw.sh:/mount-raw.sh
+    entrypoint: /mount-raw.sh
